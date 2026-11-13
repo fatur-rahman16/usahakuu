@@ -279,3 +279,14 @@ textarea{resize:vertical;line-height:1.5}
 .splash{position:fixed;inset:0;z-index:90;background:#a6a6a6;display:grid;place-items:center;transition:opacity .5s}
 .splash.out{opacity:0;pointer-events:none}
 .splash img{width:min(86vw,460px);height:auto;display:block;border-radius:18px}
+
+/* --- Tentang aplikasi & developer --- */
+.about-card,.dev-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:8px 0 12px}
+.about-card h3,.dev-card h3{font-size:18px;margin:8px 0 0}
+.about-card small,.dev-card small{color:var(--muted);font-size:12.5px}
+.about-logo{width:64px;height:64px;border-radius:20px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.about-txt{color:var(--muted);font-size:14px;line-height:1.5;margin:6px 0 10px}
+.about-list{margin:0;padding-left:20px;font-size:14px;line-height:1.9}
+.dev-photo{position:relative;width:96px;height:96px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.dev-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dev-quote{margin:8px 0 0;padding:12px 16px;border-left:3px solid var(--accent);background:var(--surface2);border-radius:12px;font-size:14px;line-height:1.5;color:var(--muted)}
