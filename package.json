@@ -1,0 +1,16 @@
+{
+  "name": "usahaku-android",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build Android APK UsahaKu with Capacitor and GitHub Actions",
+  "scripts": {
+    "prepare:web": "node scripts/prepare-web.mjs"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "7.4.3"
+  },
+  "dependencies": {
+    "@capacitor/android": "7.4.3",
+    "@capacitor/core": "7.4.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "appId": "id.usahaku.app",
+  "appName": "UsahaKu",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

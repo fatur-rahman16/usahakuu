@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c0e0d">
+<meta name="description" content="UsahaKu - catat penjualan, modal, dan pembayaran">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="UsahaKu">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>UsahaKu</title>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('usahaTheme')==='light'?'light':'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <button class="avatar" data-act="photo" aria-label="Ganti foto profil">
+      <span class="av-img" id="avHeader"></span>
+      <span class="av-cam" data-i="camera" data-s="12"></span>
+    </button>
+    <div>
+      <button class="name-btn" id="brandName" data-act="rename" aria-label="Ubah nama">UsahaKu</button>
+      <small id="todayTxt"></small>
+    </div>
+  </div>
+  <div class="hdr-r">
+    <button class="more" data-act="menu-toggle" aria-label="Menu"><span data-i="menu" data-s="22"></span></button>
+    <div class="dd" id="dd">
+      <button data-act="open-pel"><span class="dd-ic" data-i="users"></span><span><b>Pelanggan & piutang</b><small>Catat pembeli dan tagihan</small></span></button>
+      <button data-act="open-wa"><span class="dd-ic" data-i="chat"></span><span><b>Kirim laporan WhatsApp</b><small>Ringkasan periode lewat WhatsApp</small></span></button>
+      <button data-act="open-banding"><span class="dd-ic" data-i="compare"></span><span><b>Perbandingan periode</b><small>Bandingkan dua periode</small></span></button>
+      <hr>
+      <button data-act="theme-toggle"><span class="dd-ic" id="themeIc"></span><span><b>Mode gelap / terang</b><small id="themeSub"></small></span></button>
+      <div class="dd-lbl">Warna aksen</div>
+      <div class="swatches" id="swatches"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page on" id="p-home"></section>
+  <section class="page" id="p-keu"></section>
+  <section class="page" id="p-rencana"></section>
+  <section class="page" id="p-pribadi"></section>
+  <section class="page" id="p-pelanggan"></section>
+  <section class="page" id="p-wa"></section>
+  <section class="page" id="p-banding"></section>
+</main>
+
+<nav class="dock"><div class="dock-in">
+  <button class="dk on" data-go="home"><span class="dk-ic" data-i="home"></span><span>Beranda</span></button>
+  <button class="dk" data-go="keu"><span class="dk-ic" data-i="cal"></span><span>Keuangan</span></button>
+  <div class="fab-slot"><button class="fab" data-act="plus" aria-label="Tambah"><span data-i="plus" data-s="28"></span></button></div>
+  <button class="dk" data-go="rencana"><span class="dk-ic" data-i="target"></span><span>Rencana</span></button>
+  <button class="dk" data-go="pribadi"><span class="dk-ic" data-i="menu"></span><span>Pribadi</span></button>
+</div></nav>
+
+<div class="splash" id="splash"><img src="splash.png" alt="Aplikasi By.Fatur"></div>
+<div class="lock" id="lock" hidden></div>
+<div class="modal" id="sheet"><div class="sheet"><div class="grab"></div><div id="sheetBody"></div></div></div>
+<div class="toasts" id="toasts"></div>
+<input type="file" id="restoreFile" accept=".json,application/json" hidden>
+<input type="file" id="photoFile" accept="image/*" hidden>
+
+<script src="app.js"></script>
+</body>
+</html>
