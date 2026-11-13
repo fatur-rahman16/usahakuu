@@ -52,6 +52,9 @@ jobs:
       - name: Buat proyek Android Capacitor
         run: npx cap add android
 
+      - name: Buat ikon Android
+        run: npx capacitor-assets generate --android
+
       - name: Sinkronkan aplikasi
         run: npx cap sync android
 
