@@ -611,6 +611,8 @@ const ACT={
   'open-pel':()=>{closeMenu();pelView=null;go('pelanggan')},
   'open-wa':()=>{closeMenu();go('wa')},
   'open-banding':()=>{closeMenu();go('banding')},
+  'open-tentang-app':()=>{closeMenu();openTentangApp()},
+  'open-tentang-dev':()=>{closeMenu();openTentangDev()},
   'cust-new':()=>custForm(null),
   'cust-open':d=>{pelView=d.id;renderPelanggan();window.scrollTo({top:0})},
   'cust-back':()=>{pelView=null;renderPelanggan();window.scrollTo({top:0})},
@@ -1033,6 +1035,34 @@ function renderBanding(){
 }
 
 /* ===== Menu ===== */
+const APP_VERSION='1.1.0';
+function openTentangApp(){
+  openSheet(`
+    <div class="sh-head"><h2>Tentang aplikasi</h2><button class="icon-btn" data-act="close" aria-label="Tutup">${ic('x',18)}</button></div>
+    <div class="about-card">
+      <div class="about-logo">${ic('home',30)}</div>
+      <h3>UsahaKu</h3>
+      <small>Versi ${APP_VERSION}</small>
+    </div>
+    <p class="about-txt">UsahaKu membantu Anda mencatat penjualan, modal, dan pembayaran dengan rapi dalam satu aplikasi.</p>
+    <ul class="about-list">
+      <li>Catat penjualan dan keuangan harian</li>
+      <li>Kelola modal dan pembelian</li>
+      <li>Pantau pelanggan dan piutang</li>
+      <li>Kirim laporan lewat WhatsApp</li>
+      <li>Bandingkan dua periode</li>
+    </ul>`);
+}
+function openTentangDev(){
+  openSheet(`
+    <div class="sh-head"><h2>Tentang developer</h2><button class="icon-btn" data-act="close" aria-label="Tutup">${ic('x',18)}</button></div>
+    <div class="dev-card">
+      <div class="dev-photo">${ic('user',44)}<img src="foto-developer.jpg" alt="Foto developer" onerror="this.remove()"></div>
+      <h3>Miftah Faturahman</h3>
+      <small>Developer UsahaKu</small>
+    </div>
+    <blockquote class="dev-quote">Aplikasi Ini Dibuat Untuk Para Pedangan Agar Bisa Mempermudah Dalam Menjalankan Usahanya Seperti saya :), Semoga Aplikasi Yang saya Buat ini berguna dan juga mohon maaf bila ada kesalahan atau bug yg didapatkan dalam aplikasi ini kalian bisa melaporkan di email saya faturahmanmiftah@gmail.com, terimakasih atas kerjasamanya :) .</blockquote>`);
+}
 function closeMenu(){$('dd').classList.remove('show')}
 
 /* ===== Tema ===== */
