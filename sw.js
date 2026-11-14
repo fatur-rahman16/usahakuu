@@ -1,5 +1,5 @@
 // Naikkan angka ini (v6, v7, ...) setiap kali file aplikasi diubah.
-const CACHE = 'usaha-fatur-v17';
+const CACHE = 'usaha-fatur-v22';
 const ASSETS = [
   './', './index.html', './style.css', './app.js', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './maskable-512.png',

@@ -1035,33 +1035,71 @@ function renderBanding(){
 }
 
 /* ===== Menu ===== */
-const APP_VERSION='1.1.0';
+
+const APP_VERSION = '1.2.2';
+
 function openTentangApp(){
   openSheet(`
-    <div class="sh-head"><h2>Tentang aplikasi</h2><button class="icon-btn" data-act="close" aria-label="Tutup">${ic('x',18)}</button></div>
+    <div class="sh-head">
+      <h2>Tentang aplikasi</h2>
+      <button class="icon-btn" data-act="close" aria-label="Tutup">${ic('x',18)}</button>
+    </div>
+
     <div class="about-card">
-      <div class="about-logo">${ic('home',30)}</div>
+      <div class="about-logo">
+        <img src="assets/icon.png" alt="Logo UsahaKu"
+          onerror="this.style.display='none'">
+      </div>
       <h3>UsahaKu</h3>
       <small>Versi ${APP_VERSION}</small>
     </div>
-    <p class="about-txt">UsahaKu membantu Anda mencatat penjualan, modal, dan pembayaran dengan rapi dalam satu aplikasi.</p>
+
+    <p class="about-txt">
+      UsahaKu membantu Anda mencatat penjualan, modal, dan pembayaran dengan rapi dalam satu aplikasi.
+    </p>
+
     <ul class="about-list">
       <li>Catat penjualan dan keuangan harian</li>
       <li>Kelola modal dan pembelian</li>
       <li>Pantau pelanggan dan piutang</li>
       <li>Kirim laporan lewat WhatsApp</li>
       <li>Bandingkan dua periode</li>
-    </ul>`);
+    </ul>
+  `);
 }
+
 function openTentangDev(){
-  openSheet(`
-    <div class="sh-head"><h2>Tentang developer</h2><button class="icon-btn" data-act="close" aria-label="Tutup">${ic('x',18)}</button></div>
-    <div class="dev-card">
-      <div class="dev-photo">${ic('user',44)}<img src="foto-developer.jpg" alt="Foto developer" onerror="this.remove()"></div>
-      <h3>Miftah Faturahman</h3>
-      <small>Developer UsahaKu</small>
+openSheet(`
+
+  <div class="sh-head">
+    <h2>Tentang developer</h2>
+    <button class="icon-btn" data-act="close" aria-label="Tutup">${ic('x',18)}</button>
+  </div>
+
+  <div class="dev-card">
+    <div class="dev-photo">
+      ${ic('user',44)}
+      <img src="developer.jpg" alt="Foto developer" onerror="this.remove()">
     </div>
-    <blockquote class="dev-quote">Aplikasi Ini Dibuat Untuk Para Pedangan Agar Bisa Mempermudah Dalam Menjalankan Usahanya Seperti saya :), Semoga Aplikasi Yang saya Buat ini berguna dan juga mohon maaf bila ada kesalahan atau bug yg didapatkan dalam aplikasi ini kalian bisa melaporkan di email saya faturahmanmiftah@gmail.com, terimakasih atas kerjasamanya :) .</blockquote>`);
+    <h3>Miftah Faturahman</h3>
+    <small>Developer UsahaKu</small>
+  </div>
+
+  <blockquote class="dev-quote">
+    Aplikasi ini dirancang untuk membantu para pedagang, termasuk saya pribadi, dalam menjalankan usaha secara lebih mudah dan efisien. Kami berharap aplikasi ini dapat memberikan manfaat yang optimal bagi pengguna.
+
+    Apabila Anda menemukan bug, kesalahan, atau kendala teknis, silakan melaporkannya melalui email: faturahmanmiftah@gmail.com. Laporan Anda akan sangat membantu kami dalam melakukan perbaikan dan peningkatan kualitas aplikasi.
+
+    Terima kasih atas dukungan dan kerja samanya.
+    
+  </blockquote>
+  
+    <blockquote class="dev-email">
+  <a href="mailto:faturahmanmiftah@gmail.com?subject=Laporan%20Bug%20Aplikasi&body=Halo%2C%20saya%20menemukan%20bug%20pada%20aplikasi%20ini.%0A%0ADetail%20bug%3A%20">
+    Kirim Laporan Bug
+  </a>
+</blockquote>
+`);
 }
 function closeMenu(){$('dd').classList.remove('show')}
 
